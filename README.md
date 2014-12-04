@@ -10,6 +10,7 @@ To use, create a text file with the following format:
 `www.example.url/example.pdf example.pdf`
 <br />
 `www.example.url/test.mp4 test.mp4`
+<br />
 Note there can not be any whitespaces in the url or the filename, as this will cause problems.
 Save it as a plain file, and then run the wget script as follows:
 
