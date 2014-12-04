@@ -8,6 +8,7 @@ This is a simple, SIMPLE bash script I wrote to replace download managers for qu
 To use, create a text file with the following format:
 <br />
 `www.example.url/example.pdf example.pdf
+
  www.example.url/test.mp4 test.mp4`
 Note there can not be any whitespaces in the url or the filename, as this will cause problems.
 Save it as a plain file, and then run the wget script as follows:
