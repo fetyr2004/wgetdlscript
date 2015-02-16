@@ -1,0 +1,8 @@
+#!/bin/bash
+err=0
+
+PS3='Please enter your choice: '
+options=("Download files from list" "Convert Videos in current directory" "Exit")
+select opt in "${options[@]}"
+
+do

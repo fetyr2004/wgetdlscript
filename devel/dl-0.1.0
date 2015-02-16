@@ -1,0 +1,31 @@
+#!/bin/bash
+err=0
+
+PS3='Please enter your choice: '
+options=("Download files from list" "Convert Videos in directory" "Exit")
+select opt in "${options[@]}"
+
+do
+    case $opt in
+	"Download files from list")
+	    echo "Please enter full path to list file."
+	    read filepath
+	    while $filepath -r url filename tail tail; do
+		wget --tries=0 -O "$filename" "$url" || err=1
+	    done <$1
+	    ;;
+	"Convert Videos in directory")
+	    echo "You chose to convert mp4 to mkv.  Please specify directory with full path."
+	    read filepath
+	    cd $filepath
+	    for i in $(ls *mp4); do ffmpeg -i $i -vcodec copy -acodec copy $i.mkv; done;
+
+	    for f in *.mp4.mkv; do mv $f ${f/.mp4.mkv/.mkv}; done;
+	    ;;
+	"Exit")
+	    break
+	    ;;
+	*) echo invalid option
+	   ;;
+    esac
+done
