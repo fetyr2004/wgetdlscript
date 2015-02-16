@@ -17,3 +17,5 @@ Save it as a plain file, and then run the wget script as follows:
 `dl /path/to/text/file`
 
 It will download the links to the current directory, with the specified file names that you created next to the url in the text file.  Simple!
+
+To change .mp4's to .mkv's, go to the directory with the .mp4's and run v24.  It will convert any mp4 to mkv by only changing containers, and then will rename them so it's <filename>.mkv instead of <filename>.mp4.mkv
